@@ -1,0 +1,6 @@
+FROM nginx
+
+LABEL maintainer="samuel.blin@digital.ai" \
+      version="22.0.0"
+
+COPY static /usr/share/nginx/html

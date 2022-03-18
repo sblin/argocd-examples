@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: helloworld
-          image: dockercloud/hello-world
+          image: samuelblin/hello-world:1.0
           imagePullPolicy: Always
           ports:
           - name: front
