@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1 # apps/v1
 kind: Rollout # Deployment
 metadata:
-  name: helloworld
+  name: helloworld-rollout
   labels:
     app: helloworld
 spec:
