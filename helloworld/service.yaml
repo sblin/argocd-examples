@@ -4,7 +4,7 @@ metadata:
   name: helloworld
 spec:
   ports:
-  - port: 80
+  - port: 8080
   selector:
     app: helloworld
   type: NodePort
