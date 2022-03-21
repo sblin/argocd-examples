@@ -21,4 +21,4 @@ spec:
           imagePullPolicy: Always
           ports:
           - name: front
-            containerPort: 80
+            containerPort: 8080
