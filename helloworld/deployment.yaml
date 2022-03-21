@@ -1,22 +1,11 @@
-apiVersion: argoproj.io/v1alpha1 # apps/v1
-kind: Rollout # Deployment
+apiVersion: apps/v1 # argoproj.io/v1alpha1 # apps/v1
+kind: Deployment # Rollout # Deployment
 metadata:
-  name: helloworld-rollout
+  name: helloworld-deploy
   labels:
     app: helloworld
 spec:
   replicas: 5
-  strategy:
-    canary:
-      steps:
-      - setWeight: 20
-      - pause: {} # pause indefinitely
-      - setWeight: 40
-      - pause: {} # pause indefinitely
-      - setWeight: 60
-      - pause: {} # pause indefinitely
-      - setWeight: 80
-      - pause: {} # pause indefinitely
   revisionHistoryLimit: 2
   selector:
     matchLabels:
@@ -28,7 +17,7 @@ spec:
     spec:
       containers:
         - name: helloworld
-          image: samuelblin/helloworld:2.0
+          image: argoproj/rollouts-demo:blue
           imagePullPolicy: Always
           ports:
           - name: front
