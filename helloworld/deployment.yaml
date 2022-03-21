@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: helloworld
-          image: argoproj/rollouts-demo:blue
+          image: argoproj/rollouts-demo:red
           imagePullPolicy: Always
           ports:
           - name: front
